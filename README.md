@@ -7,6 +7,10 @@ To start the server execute `npm run start` in the root directory.
 
 # Endpoints
 
-/upload/imageraw
+/upload/imageraw 
+
+upload single files
 
 /upload/imagezip
+
+upload zipped images
