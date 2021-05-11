@@ -115,13 +115,13 @@ router.post('/upload/imagezip', uploadZip.single('file'), function (req, res) {
           sizeOf('./public/images/'+zipEntry.entryName, function (err, dimensions) {
             if (dimensions.width > 128 || dimensions.height > 128) {
               try {
-                  const th64 = './public/images/thumbs'+'th64'+zipEntry.entryName
-                  sharp(req.file.path, { failOnError: false })
+                  const th64 = './public/images/thumbs/'+'th64'+zipEntry.entryName
+                  sharp('./public/images/'+ zipEntry.entryName, { failOnError: false })
                     .resize({width: 64})
                     .toFile(th64)
         
-                  const th32 = './public/images/thumbs'+'th32'+zipEntry.entryName
-                  sharp(req.file.path, { failOnError: false })
+                  const th32 = './public/images/thumbs/'+'th32'+zipEntry.entryName
+                  sharp('./public/images/'+ zipEntry.entryName, { failOnError: false })
                     .resize({width: 32})
                     .toFile(th32)
 
